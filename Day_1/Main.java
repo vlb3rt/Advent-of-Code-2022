@@ -34,6 +34,7 @@ public class Main {
                     sumCal += Integer.parseInt(line);
                 }
             }
+            in.close();
         }catch (FileNotFoundException e) {
             System.out.println("File not found");
         }

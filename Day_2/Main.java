@@ -10,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        File input = new File("Day_2/input.txt");
+        File input = new File("Day_2/input.txt"); //Input file
 
         final int rock = 1, paper = 2, scissors = 3;
         final int lose = 0, draw = 3, win = 6;

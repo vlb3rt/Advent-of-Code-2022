@@ -11,36 +11,43 @@ public class Main {
     public static void main(String[] args) {
 
         File input = new File("Day_1/input.txt");
+
+        //ArrayList contains sum of calories for each elf
         ArrayList<Integer> elves = new ArrayList<>();
 
-        int topElves = 3, topSum = 0;
-        int sumCal = 0;
+        int sumCal = 0; //Used to sum calories carried by one elf
+        final int topElves = 3; //Defines how many elves are counted in 2nd part
+        int topSum = 0; //Used to sum calories caried by top elves
 
         try {
             Scanner in = new Scanner(input);
-            String lineAsString;
+            String line; //Variable used to store each line of input file
 
             while (in.hasNextLine()) {
-                lineAsString = in.nextLine();
+                line = in.nextLine();
 
-                if(lineAsString.equals("")) {
+                //Conditions summing and adding calories to the ArrayList for each elf
+                if (line.equals("")) {
                     elves.add(sumCal);
                     sumCal = 0;
                 }else {
-                    sumCal += Integer.parseInt(lineAsString);
+                    sumCal += Integer.parseInt(line);
                 }
             }
-            Collections.sort(elves);
-            System.out.println("Top 1 cal: "+elves.get(elves.size()-1));
-
-            for(int i=1;i<=topElves;i++) {
-                topSum += elves.get(elves.size()-i);
-            }
-
-            System.out.println("Top "+topElves+" cal sum: "+topSum);
-
-        } catch (FileNotFoundException e) {
+        }catch (FileNotFoundException e) {
             System.out.println("File not found");
         }
+
+        //Sorting ArrayList
+        Collections.sort(elves);
+
+        //Summing tom elves calories
+        for(int i=1;i<=topElves;i++) {
+            topSum += elves.get(elves.size()-i);
+        }
+
+        //Printing results
+        System.out.println("Top 1 cal: "+elves.get(elves.size()-1));
+        System.out.println("Top "+topElves+" cal sum: "+topSum);
     }
 }

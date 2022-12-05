@@ -79,6 +79,3 @@ Calories), then the third Elf (with 11000 Calories), then the fifth Elf
 is 45000.
 
 -> Find the top three Elves carrying the most Calories. How many Calories are those Elves carrying in total?
-
-
-

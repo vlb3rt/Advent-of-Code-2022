@@ -12,8 +12,9 @@ public class Main {
 
         File input = new File("Day_2/input.txt"); //Input file
 
-        final int rock = 1, paper = 2, scissors = 3;
-        final int lose = 0, draw = 3, win = 6;
+        final int rock = 1, paper = 2, scissors = 3;//Points for using specific sign
+        final int lose = 0, draw = 3, win = 6;//Points for game outcome
+        int sumStrat1 = 0, sumStrat2 = 0;//Variables to sum points for each strategy
 
         //HashMaps contain key: all possible combinations of input, value: points according to a specific strategy
         Map<String, Integer> strategy1 = new HashMap<>();
@@ -43,19 +44,21 @@ public class Main {
 
         try {
             Scanner in = new Scanner(input);
-            int sum1 = 0;
-            int sum2 = 0;
+
             while (in.hasNextLine()) {
                 String line = in.nextLine();
 
-                sum1 += strategy1.get(line);
-                sum2 += strategy2.get(line);
+                //Summing up points
+                sumStrat1 += strategy1.get(line);
+                sumStrat2 += strategy2.get(line);
             }
-            System.out.println("Points from strategy 1: "+sum1);
-            System.out.println("Points from strategy 2: "+sum2);
-
+            in.close();
         } catch (FileNotFoundException e) {
             System.out.println("File not found");
         }
+
+        //Printing results
+        System.out.println("Points from strategy 1: "+sumStrat1);
+        System.out.println("Points from strategy 2: "+sumStrat2);
     }
 }

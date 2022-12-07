@@ -12,10 +12,10 @@ public class Main {
     static HashMap<Integer, String> allAtOnce = new HashMap<>();
 
     //Function used to print top elements of each index
-    public static void printTops(HashMap<Integer, String> containers) {
+    public static String printTops(HashMap<Integer, String> containers) {
         String tops = "";
         for(int i=0;i<containers.size();i++) tops += containers.get(i).charAt(containers.get(i).length()-1);
-        System.out.println(tops);
+        return tops;
     }
 
     //Function used to turn file input into a HashMap<Integer, String>
@@ -78,7 +78,7 @@ public class Main {
             while (in.hasNextLine()) {
                 line = in.nextLine();
 
-                if(lineCounter < 8) {
+                if (lineCounter < 8) {
                     positionsToHashMap(line, oneByOne);
                     positionsToHashMap(line, allAtOnce);
                 } else if (lineCounter > 9) move(line);
@@ -88,7 +88,9 @@ public class Main {
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
-        printTops(oneByOne);
-        printTops(allAtOnce);
+
+        //Printing results
+        System.out.println("One By One: " + printTops(oneByOne));
+        System.out.println("All At Once: " + printTops(allAtOnce));
     }
 }

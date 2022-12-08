@@ -16,7 +16,7 @@ public class Main {
         ArrayList<Integer> elves = new ArrayList<>();
 
         int sumCal = 0; //Used to sum calories carried by one elf
-        final int topElves = 3; //Defines how many elves are counted in 2nd part
+        final int TOP_ELVES = 3; //Defines how many elves are counted in 2nd part
         int topSum = 0; //Used to sum calories caried by top elves
 
         try {
@@ -43,12 +43,12 @@ public class Main {
         Collections.sort(elves);
 
         //Summing tom elves calories
-        for(int i=1;i<=topElves;i++) {
+        for(int i=1;i<=TOP_ELVES;i++) {
             topSum += elves.get(elves.size()-i);
         }
 
         //Printing results
         System.out.println("Top 1 cal: "+elves.get(elves.size()-1));
-        System.out.println("Top "+topElves+" cal sum: "+topSum);
+        System.out.println("Top "+TOP_ELVES+" cal sum: "+topSum);
     }
 }

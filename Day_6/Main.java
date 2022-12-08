@@ -6,6 +6,7 @@ import java.util.*;
 
 public class Main {
 
+    //Function used to check whether all elements are different
     public static boolean isMarker(LinkedList<Character> marker, int markerSize) {
         int occurance = 0;
         for(Character element : marker) {
@@ -16,6 +17,7 @@ public class Main {
         return occurance == markerSize;
     }
 
+    //function used to loop through the line input
     public static int loop(String line, int markerSize) {
         int lineSize = line.length();
         LinkedList<Character> marker = new LinkedList<>();

@@ -12,8 +12,8 @@ public class Main {
 
         File input = new File("Day_2/input.txt"); //Input file
 
-        final int rock = 1, paper = 2, scissors = 3;//Points for using specific sign
-        final int lose = 0, draw = 3, win = 6;//Points for game outcome
+        final int ROCK = 1, PAPER = 2, SCISSORS = 3;//Points for using specific sign
+        final int LOSE = 0, DRAW = 3, WIN = 6;//Points for game outcome
         int sumStrat1 = 0, sumStrat2 = 0;//Variables to sum points for each strategy
 
         //HashMaps contain key: all possible combinations of input, value: points according to a specific strategy
@@ -21,26 +21,26 @@ public class Main {
         Map<String, Integer> strategy2 = new HashMap<>();
 
         //A, B, C - competitor's choice; X, Y, Z - my choice
-        strategy1.put("A X", rock + draw);          //A, X -> Rock
-        strategy1.put("A Y", paper + win);          //B, Y -> Paper
-        strategy1.put("A Z", scissors + lose);      //C, Z -> Scissors
-        strategy1.put("B X", rock + lose);
-        strategy1.put("B Y", paper + draw);
-        strategy1.put("B Z", scissors + win);
-        strategy1.put("C X", rock + win);
-        strategy1.put("C Y", paper + lose);
-        strategy1.put("C Z", scissors + draw);
+        strategy1.put("A X", ROCK + DRAW);          //A, X -> Rock
+        strategy1.put("A Y", PAPER + WIN);          //B, Y -> Paper
+        strategy1.put("A Z", SCISSORS + LOSE);      //C, Z -> Scissors
+        strategy1.put("B X", ROCK + LOSE);
+        strategy1.put("B Y", PAPER + DRAW);
+        strategy1.put("B Z", SCISSORS + WIN);
+        strategy1.put("C X", ROCK + WIN);
+        strategy1.put("C Y", PAPER + LOSE);
+        strategy1.put("C Z", SCISSORS + DRAW);
 
         //A, B, C - competitor's choice; X, Y, Z - expected outcome of the game
-        strategy2.put("A X", scissors + lose);      //A -> Rock
-        strategy2.put("A Y", rock + draw);          //B -> Paper
-        strategy2.put("A Z", paper + win);          //C -> Scissors
-        strategy2.put("B X", rock + lose);
-        strategy2.put("B Y", paper + draw);         //X -> lose
-        strategy2.put("B Z", scissors + win);       //Y -> draw
-        strategy2.put("C X", paper + lose);         //Z -> win
-        strategy2.put("C Y", scissors + draw);
-        strategy2.put("C Z", rock + win);
+        strategy2.put("A X", SCISSORS + LOSE);      //A -> Rock
+        strategy2.put("A Y", ROCK + DRAW);          //B -> Paper
+        strategy2.put("A Z", PAPER + WIN);          //C -> Scissors
+        strategy2.put("B X", ROCK + LOSE);
+        strategy2.put("B Y", PAPER + DRAW);         //X -> lose
+        strategy2.put("B Z", SCISSORS + WIN);       //Y -> draw
+        strategy2.put("C X", PAPER + LOSE);         //Z -> win
+        strategy2.put("C Y", SCISSORS + DRAW);
+        strategy2.put("C Z", ROCK + WIN);
 
         try {
             Scanner in = new Scanner(input);
